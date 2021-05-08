@@ -10,6 +10,11 @@ Brought to you by NUS Hackers
 
 
 
+### How do they all work together?
+![](img/html-css-js.png)
+
+
+
 ### HTML Snippet
 ```html [1 - 9]
 <!DOCTYPE html>         
@@ -22,7 +27,7 @@ Brought to you by NUS Hackers
 	</body>
 </html>
 ```
-- Every web page consists of nested HTML elements
+- Every web page consists of nested **HTML elements**
 - Each element (HTML tag) describes something on the page e.g, headings, lists, links, etc. 
 
 
@@ -97,6 +102,7 @@ The **`body`** = the visible part of a web page
 
 ### Common HTML Elements
 - Headings
+- Divs
 - Lists
 - Images
 - Links
@@ -115,7 +121,7 @@ Starts with `<!--` and ends with `-->`
 
 
 ### Elements for styling text
-```
+```html
 <b>bold<b>
 <i>italics<i>
 <u>underline<u>
@@ -153,6 +159,7 @@ Used for titles
 
 
 ### Images
+Images are self-closing! There is no `</img>` closing tag. 
 ```html
 <img src="{LINK_TO_IMAGE}"/>
 ```
@@ -164,7 +171,7 @@ Used for titles
 <a href="https://nushackers.org">Click me!</a>
 ```
 - `href` defines link to go to, could be a URL or PATH
-- `target` defines... 
+- Name of the link e.g., "Click me!" defined within the starting and closing tags
 
 
 ### Buttons
@@ -172,6 +179,7 @@ Used for titles
 <button onclick=clickme()>Click me!</button>
 ```
 - `onclick` is an **event listener** (will be discussed in later slides)
+- Buttons are usually associated with forms
 
 
 
@@ -191,7 +199,7 @@ h1 {
 }
 ```
 - CSS = Cascading style sheets
-- Every element has CSS style attributes specific to it
+- Every element has CSS style attributes
 
 
 
@@ -256,7 +264,7 @@ h1 {
 - This is useful for identifying and styling certain elements
 
 
-### CSS Specificity
+### CSS Selectors
 ```css
 h1.title {
 	color: #e4e4e4;
@@ -267,6 +275,28 @@ h1#special-title {
 }
 ```
 Allows us to select HTML elements based on relationships and identification
+- `h1.title` selects all elements `<h1>` with `class="title"`
+- `h1#special-title` selects all elements `<h1>` with `id="special-title"`
+
+
+### Specificity
+There are 3 main types of selectors
+1. Type selectors (For selecting elements)
+2. Class selectors
+3. ID selectors
+
+1 is the least specific, 3 is the most specific.
+
+[Mozilla CSS Specificity Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+
+
+### Selecting based on type
+```css
+h1 {
+	color: blue;
+}
+```
+- Applies to all `<h1>` elements on the page
 
 
 ### Selecting based on class
@@ -301,32 +331,72 @@ h1#pear {
 - `h1#apple` applies to all `<h1>` elements with `id="apple"`
 
 
-### Selecting based on relationships
-Based on the document object model (DOM)
+### Combinators
+Based on the document object model (DOM), we can combine selectors to select elements based on relationships
 ```css
+div h1 {
+    color: pink;
+    font-size: 30px
+}
+
 div > h1 {
     color: blue;
     font-size: 30px
 }
 ```
-`div > h1` selects all `<h1>` elements nested inside a `<div>` element
+- `div h1` selects all `<h1>` inside `<div>` elements
+- `div > h1` selects all `<h1>` whose parent = `<div>` element
 
 
 ### A lot more selectors
-|Selector|Meaning|
-|--------|-------|
-|`.a` | Select elements with `class="apple"`|
-|`#a` | Select elements with `id="apple"`|
-|`a > b` | Select elements `<b>` that are nested in `<a>` |
+
+- [Mozilla CSS Selector Reference](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators)
+- [W3Schools CSS selector cheatsheet](https://www.w3schools.com/cssref/css_selectors.asp)
 
 
 
 ### Responsive design
 Everyone views web pages from their phones now, we need to be able to style for different viewports, like phones and tablets
 
+![](img/responsive.gif)
+
+
 
 ### Flexbox
-Flexbox = flexible box
+- Flexbox = flexible box
+- A way to construct responsive layouts in CSS
+- Alternative to CSS grid
+  - (Self-study) [Grid v Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout)
+
+
+### How to use flexbox in CSS?
+To create a **flex container**, just add the `display: flex` attribute to the container
+```
+.container {
+	display: flex;
+}
+```
+The container is now a **flex container** and all elements within it are **flex items**
+
+
+### Configuring flex containers
+For flex containers, we can adjust the alignment and order of the items inside + much more, using different attributes
+
+
+### Flex container attributes
+
+|Attribute|Description|
+|---------|-----------|
+|`flex-direction` | Specifies direction of the flex items |
+|`flex-wrap`| Specifies wrapping behaviour of flex items |
+| `flex-grow` | Specifies |
+| `justify-content` | Specifies horizontal alignment of flex items |
+|`align-items`| Specifies vertical alignment of flex items | 
+
+There are also attributes that you can provide for flex items.
+
+[Reference: A complete guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 
 
 ### Media queries
@@ -341,23 +411,44 @@ Flexbox = flexible box
 
 
 ### External Libraries
-You don't have to style everything from scratch!! There are libraries out there that help with styling elements and providing responsive styles 
-- Bootstrap
-- Tailwind CSS
+You don't have to style everything from scratch!!
+- [Bootstrap](https://getbootstrap.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+<br/>
+<img src="img/bootstrap-4.svg" width=200px/>
+<img src="img/tailwind.svg" width=300px/>
 
 
+### CSS Pre-processors
+Allows you to generate CSS from the preprocessor's own syntax
+- [Sass](https://sass-lang.com/)
+- [Less](https://lesscss.org/)
 
-### Other CSS tools
-- Sass
-- Less
+<br/>
+<img src="img/sass.svg" width=200px/>
+<img src="img/less.svg" width=300px/>
+
+
+### Example: Sass
+Sass allows for nesting within CSS, variables + more features
+```scss
+.alert, .warning {
+  ul, p {
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+}
+
+```
+[Reference: Sass documentation](https://sass-lang.com/documentation)
 
 
 
 ### JavaScript
 - Source is a subset of JavaScript!
-- Was actually made in 10 days 
-- HTML describes what a page looks like 
-- JS allows us to add logic
+- HTML describes what a page looks like, **JS allows us to add logic to a webpage**
 - It can manipulate the DOM!
 
 
@@ -455,12 +546,21 @@ We can actually create a static website with all the info we have learned thus f
 
 
 
+### So what now?
+- Learn how to create static sites using a **static site generator**
+- Learn frameworks e.g., React, Angular, Vue
+- The best way to master what you've learnt is to **build your own project**
+
+
+
 ### Conclusion
 - Front-end development is more than meets the eye
-- Hands on practice to get more experience
-- Modules that touch front-end design and development
+- Hands on practice to get more experience, a lot of self learning things you can't learn in NUS
+- Modules that touch on web development
   - CS3249 User Interface Design
   - CS3240 Interaction Design
+  - CS3226 Web Programming and Applications (Not sure if it's still around)
+- Come for NUS Hackers' hackerschool
 
 
 
