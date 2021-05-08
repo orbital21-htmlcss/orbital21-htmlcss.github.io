@@ -2,10 +2,137 @@
 <html>
     <head>
         <title>Flexbox Examples</title>
+
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .flex-item {
+                background: #129c24;
+                color: #ffffff;
+                margin: 10px 10px;
+                padding: 20px 20px;
+                width: 100px;
+            }
+
+            .container-simple-flex {
+                display: flex;
+            }
+
+            .container-flex-wrap {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .container-flex-reverse {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .container-flex-col {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .container-flex-justify-center {
+                display: flex;
+                justify-content: center;
+            }
+
+            .container-flex-justify-start {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .container-flex-justify-end {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .container-flex-justify-even {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+        </style>
+
     </head>
     <body>
         <h1>
             Here are some flexbox examples
         </h1>
+        <h3>Basic flexbox</h3>
+        <div class="container-simple-flex">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <h3>Flexbox with <code>flex-wrap: wrap</code></h3>
+        <div class="container-flex-wrap">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <hr>
+
+        <h2>Flexbox with <code>flex-direction</code></h2>
+
+        <h3>Flexbox with <code>flex-direction: row-reverse</code></h3>
+        <div class="container-flex-reverse">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <h3>Flexbox with <code>flex-direction: column</code></h3>
+        <div class="container-flex-col">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <hr>
+
+        <h2>Flexbox with <code>justify-content</code></h2>
+        
+        <h3>Flexbox with <code>justify-content: center</code></h3>
+        <div class="container-flex-justify-center">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <h3>Flexbox with <code>justify-content: flex-start</code></h3>
+        <div class="container-flex-justify-start">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <h3>Flexbox with <code>justify-content: flex-end</code></h3>
+        <div class="container-flex-justify-end">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
+        <h3>Flexbox with <code>justify-content: space-evenly</code></h3>
+        <div class="container-flex-justify-even">
+            <div class="flex-item">item 1</div>
+            <div class="flex-item">item 2</div>
+            <div class="flex-item">item 3</div>
+            <div class="flex-item">item 4</div>
+        </div>
+
     </body>
 </html>
