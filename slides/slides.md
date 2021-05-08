@@ -11,7 +11,7 @@ Brought to you by NUS Hackers
 
 
 ### HTML Snippet
-```html
+```html [1 - 9]
 <!DOCTYPE html>         
 <html lang="en">        
 	<head>              
@@ -42,7 +42,7 @@ The **`DOCTYPE`** declaration tells the browser what ver. of HTML to use
 
 
 ### HTML tag
-```html [2, 9]
+```html [2 - 9]
 <!DOCTYPE html>         
 <html lang="en">        
 	<head>              
@@ -57,7 +57,7 @@ The **`HTML`** tag marks beginning of HTML content, in between the start and clo
 
 
 ### head tag
-```html [3, 5]
+```html [3 - 5]
 <!DOCTYPE html>         
 <html lang="en">        
 	<head>              
@@ -72,7 +72,7 @@ The **`head`** of a webpage contains information browsers need to know about
 
 
 ### body tag
-```html [6, 8]
+```html [6 - 8]
 <!DOCTYPE html>         
 <html lang="en">        
 	<head>              
@@ -91,12 +91,12 @@ The **`body`** = the visible part of a web page
 - DOM = document object model
 - Each web page is like a tree structure that describes how the HTML elements are related to each other
 
-![](../img/dom.png)
+![](img/dom.png)
 
 
 
 ### Common HTML Elements
-- Headings `h1 h2 ... h6`
+- Headings
 - Lists
 - Images
 - Links
@@ -143,7 +143,7 @@ Used for titles
 
 
 ### Lists - Unordered
-`<ul>` (list items) nested inside `<ul>`
+`<li>` (list items) nested inside `<ul>`
 ```html
 <ul>
     <li> item 1 </li>
@@ -178,7 +178,7 @@ Used for titles
 ### Forms
 - Forms are a little more complex
 ```html
-
+test
 ```
 
 
@@ -202,6 +202,7 @@ Examples of attributes
 - `color: #999999;`
 - `padding: 10px;`
 - `margin: 10px;`
+
 [Mozilla CSS Attributes Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
 
@@ -240,7 +241,7 @@ h1 {
 }
 ```
 `index.html`
-```html2
+```html
 <head>
     <link rel="stylesheet" href="style.css"/>
 </head>
@@ -251,18 +252,18 @@ h1 {
 
 
 ### HTML Classes and IDs
-- HTML elements can be assigned **classes* and **id**s 
+- HTML elements can be assigned **classes** and **id**s 
 - This is useful for identifying and styling certain elements
 
 
 ### CSS Specificity
-```
+```css
 h1.title {
-
+	color: #e4e4e4;
 }
 
 h1#special-title {
-
+	color: #55555;
 }
 ```
 Allows us to select HTML elements based on relationships and identification
@@ -319,14 +320,23 @@ div > h1 {
 |`a > b` | Select elements `<b>` that are nested in `<a>` |
 
 
+
 ### Responsive design
-Everyone views web pages from their phones now, we need to be able to style for different viewports
+Everyone views web pages from their phones now, we need to be able to style for different viewports, like phones and tablets
 
 
 ### Flexbox
+Flexbox = flexible box
 
 
 ### Media queries
+
+
+
+### Mastering HTML/CSS
+- Might seem easy but actually tedious 
+- CSS is very powerful and has a lot more features than covered today (RTFM!)
+- Practice makes perfect, just dive right into it and Google like mad... also RTFM
 
 
 
@@ -334,6 +344,12 @@ Everyone views web pages from their phones now, we need to be able to style for 
 You don't have to style everything from scratch!! There are libraries out there that help with styling elements and providing responsive styles 
 - Bootstrap
 - Tailwind CSS
+
+
+
+### Other CSS tools
+- Sass
+- Less
 
 
 
@@ -354,7 +370,8 @@ Done in 2 ways
 
 
 ### Example 1
-```html [3, 9]
+Simple counter button
+```html [3 - 9]
     <head>
 		<title>Counter</title>
 		<script>
@@ -375,7 +392,7 @@ Done in 2 ways
 
 ### Example 2
 Manipulating the DOM
-```html
+```html [3 - 7]
 <head>
     <title>Foobar</title>
     <script>
@@ -391,6 +408,7 @@ Manipulating the DOM
 ```
 
 
+
 ### Manipulating the DOM
 ```html [3]
 <script>
@@ -399,4 +417,54 @@ Manipulating the DOM
     }
 </script>
 ```
+- `document` serves as an entrypoint to the web page's DOM, has many other functions to manipulate or query the DOM
 - `document.querySelector` allows us to extract elements out of the page so we can manipulate them
+
+
+### Other `document` methods
+
+|Method|Description|
+|`document.getElementById` | Returns element with given `id` attribute |
+|`document.getElementsByClassName()` | Returns a list of elements with given class name |
+
+[Mozilla `Document` Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document)
+
+
+### Logging for debugging
+```js
+function button() {
+	console.log('I have been pressed');
+}
+```
+
+
+
+### CODE DEMO
+We can actually create a static website with all the info we have learned thus far. 
+
+
+
+### Event Handlers
+- Every user interaction with the page = EVENT!
+- E.g, mouse events
+  - `onclick`
+  - `onmousemove`
+  - `onmouseenter`
+  - `onwheel`
+- Many other events, refer to [Mozilla Event Reference](https://developer.mozilla.org/en-US/docs/Web/Events)
+
+
+
+### Conclusion
+- Front-end development is more than meets the eye
+- Hands on practice to get more experience
+- Modules that touch front-end design and development
+  - CS3249 User Interface Design
+  - CS3240 Interaction Design
+
+
+
+### Thanks for attending
+Join the NUS Hackers' telegram chat if you have any questions
+
+[t.me/nushackers_chat](https://t.me/nushackers_chat)
