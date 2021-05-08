@@ -1,0 +1,141 @@
+<!--
+    This is an example of a basic HTML website with simple JS used for navigation links.
+    In the real world, people don't make websites like this anymore!! 
+    So if you want to create a portfolio site, please don't do this, use a static site generator instead.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            html {
+                overflow-y: hidden;
+            }
+            
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: #b4b4b4;
+                color: #1f1f1f;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            hr {
+                color: #cccccc;
+            }
+
+            #about,
+            #experience,
+            #contact {
+                display: none;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 500px; 
+                margin: 10% auto;            
+            }
+
+            #main {
+                width: 100%;
+                background: #FFFFFF;
+                padding: 0px 20px 10px;
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            .title {
+                width: 100%;
+                text-align: center;
+                background: #FFFFFF;
+                border-radius: 10px 10px 0px 0px;
+            }
+
+            .nav {
+                display: flex;
+                flex-wrap: wrap;
+                margin: auto;
+                background: #add7ff;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 15px 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="title">
+                <h1>Steve's Website</h1>
+                <h3>A simple site for my portfolio</h3>
+            </div>
+
+            <div class="nav">
+                <a class="nav-link" onclick="document.getElementById('main').innerHTML = document.getElementById('about').innerHTML;";>About me</a>
+                <a class="nav-link" onclick="document.getElementById('main').innerHTML = document.getElementById('experience').innerHTML;";>Experience</a>
+                <a class="nav-link" onclick="document.getElementById('main').innerHTML = document.getElementById('contact').innerHTML;";>Contact</a>
+            </div>
+
+            <div id="main"></div>
+
+            <div id="about">
+                <h2>About me</h2>
+                Hello! My name is Steve. One thing you should know about me is that I think Adobe Flash is disgusting!
+                So glad that it's gone now. My worst enemy is this guy called Bill. He recently got divorced from his wife
+                so that's great LOL! 
+
+                <h3>My Links</h3>
+                <ul>
+                    <li>
+                        I don't have a Facebook because of privacy concerns :S
+                    </li>
+                    <li>
+                        <a href="twitter.com/apple">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/apple">Github</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="experience">
+                <h2>Work Experience</h2>
+                <p>
+                    <h3>Apple Inc.</h3>
+                    <h4>CEO</h4>
+                    1997 - 2011
+                </p>
+                <hr>
+                <p>
+                    <h3>Pixar Animation Studios</h3>
+                    <h4>Founder</h4>
+                    1986 - 2006
+                </p>
+                <hr>
+                <p>
+                    <h3>NeXT Inc.</h3>
+                    <h4>Co-Founder</h4>
+                    1985 - 1997
+                </p>
+            </div>
+
+            <div id="contact">
+                <h2>Contact</h2>
+                Message: <br/>
+                <form>
+                    <input type="text" size="19" name="contact">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
