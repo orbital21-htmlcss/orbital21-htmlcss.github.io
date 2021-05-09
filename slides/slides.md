@@ -4,14 +4,72 @@ Brought to you by NUS Hackers
 
 
 
+### Disclaimer
+- This workshop covers the basics, not meant to master HTML/CSS/JS in 2 hours that's just not possible
+- Feel free to ask questions in chat
+
+
+
+### Resources
+Slides can be found here 
+
+[bit.ly/orbital21-hsj](bit.ly/orbital21-hsj)
+
+Code examples can be found here 
+
+[bit.ly/orbital21-hsj-code](https://github.com/raniceyue/orbital21-htmlcss/tree/master/code)
+
+
+
+### Outline
+1. HTML
+    - Basic HTML elements
+    - Forms
+2. CSS
+    - CSS selectors + specificity
+    - Flexbox
+    - Media queries
+3. JavaScript
+    - Manipulating the DOM
+    - Event listeners
+
+
+
+### What you need
+1. Your browser
+
+<br/>
+<img src="img/firefox.svg" width=150px>
+<img src="img/chrome.svg" width=150px>
+<br/>
+
+2. Your favourite text editor
+    - Vim/Emacs 
+    - Sublime text
+    - VS Code
+
+
+
 ### INTRODUCTION
 - HTML/CSS are not programming languages
 - JS is a programming language
+- The browser is your REPL
 
 
 
 ### How do they all work together?
 ![](img/html-css-js.png)
+
+
+
+### HTML
+#### Hyper Text Markup Language
+
+
+
+### HTML files
+- End with `.html`
+- Contents can be viewed in the browser
 
 
 
@@ -120,13 +178,25 @@ The **`body`** = the visible part of a web page
 Starts with `<!--` and ends with `-->`
 
 
+### `<div>`
+```html
+<div class="container">
+    Some text here
+</div>
+```
+- Usually comes with `class` or `id` specified (more about this later)
+- Used for **containers**
+- No impact on webpage layout unless it is **styled with CSS** (more about this later)
+
+
 ### Elements for styling text
 ```html
-<b>bold<b>
-<i>italics<i>
-<u>underline<u>
+<b>bold</b>
+<i>italics</i>
+<u>underline</u>
 <br/> <!-- Adding whitespace to a page -->
 ```
+- Note: `<br>` is self closing, can use as either `<br>` or `<br/>`
 
 
 ### Headings
@@ -159,10 +229,10 @@ Used for titles
 
 
 ### Images
-Images are self-closing! There is no `</img>` closing tag. 
 ```html
 <img src="{LINK_TO_IMAGE}"/>
 ```
+- Note: Images are self-closing! There is no `</img>` closing tag, use `/>` at the end
 - `src` defines a link to the image, could be a URL or PATH
 
 
@@ -180,6 +250,7 @@ Images are self-closing! There is no `</img>` closing tag.
 ```
 - `onclick` is an **event listener** (will be discussed in later slides)
 - Buttons are usually associated with forms
+- Automatically styled by browser to look like a button (you can change this with CSS)
 
 
 
@@ -190,15 +261,18 @@ test
 ```
 
 
+### CSS
+#### Cascading Style Sheets
+
+
 
 ### CSS
-```
+```css
 h1 {
     color: #999;
     font-size: 12px;    
 }
 ```
-- CSS = Cascading style sheets
 - Every element has CSS style attributes
 
 
@@ -260,17 +334,21 @@ h1 {
 
 
 ### HTML Classes and IDs
+```html
+<div class="container"> ... </div>
+<div id="about"> ... </div>
+```
 - HTML elements can be assigned **classes** and **id**s 
 - This is useful for identifying and styling certain elements
 
 
 ### CSS Selectors
 ```css
-h1.title {
+h1.container {
 	color: #e4e4e4;
 }
 
-h1#special-title {
+h1#about {
 	color: #55555;
 }
 ```
@@ -301,34 +379,34 @@ h1 {
 
 ### Selecting based on class
 ```css
-.apple {
+.container {
     color: red;
     font-size: 25px;
 }
 
-h1.pear {
+h1.container-title {
     color: green;
     font-size: 30px;
 }
 ```
-- `.apple` applies to all elements with `class="apple"`
-- `h1.apple` applies to all `<h1>` elements with `class="apple"`
+- `.container` applies to all elements with `class="container"`
+- `h1.container-title` applies to all `<h1>` elements with `class="container-title"`
 
 
 ### Selecting based on ID
 ```css
-#apple {
+#about {
     color: red;
     font-size: 25px;
 }
 
-h1#pear {
+h1#about-title {
     color: green;
     font-size: 30px;
 }
 ```
-- `.apple` applies to all elements with `id="apple"`
-- `h1#apple` applies to all `<h1>` elements with `id="apple"`
+- `.about` applies to all elements with `id="about"`
+- `h1#about` applies to all `<h1>` elements with `id="about"`
 
 
 ### Combinators
@@ -514,9 +592,10 @@ Manipulating the DOM
 
 ### Other `document` methods
 
-|Method|Description|
-|`document.getElementById` | Returns element with given `id` attribute |
-|`document.getElementsByClassName()` | Returns a list of elements with given class name |
+- `document.getElementById`
+  - Returns element with given `id` attribute
+- `document.getElementsByClassName()`
+  - Returns a list of elements with given class name 
 
 [Mozilla `Document` Reference](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 
@@ -568,3 +647,7 @@ We can actually create a static website with all the info we have learned thus f
 Join the NUS Hackers' telegram chat if you have any questions
 
 [t.me/nushackers_chat](https://t.me/nushackers_chat)
+
+Follow us on instagram for updates on our events!! 
+
+[instagram.com/nushackers](https://instagram.com/nushackers)
