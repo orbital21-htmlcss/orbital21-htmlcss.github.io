@@ -13,11 +13,7 @@ Brought to you by NUS Hackers
 ### Resources
 Slides can be found here 
 
-[bit.ly/orbital21-hsj](bit.ly/orbital21-hsj)
-
-Code examples can be found here 
-
-[bit.ly/orbital21-hsj-code](https://github.com/raniceyue/orbital21-htmlcss/tree/master/code)
+[bit.ly/orbital21-hcj](bit.ly/orbital21-hcj)
 
 
 
