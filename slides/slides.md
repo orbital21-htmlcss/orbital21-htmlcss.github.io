@@ -226,9 +226,9 @@ Used for titles
 
 ### Images
 ```html
-<img src="{LINK_TO_IMAGE}"/>
+<img src="{LINK_TO_IMAGE}">
 ```
-- Note: Images are self-closing! There is no `</img>` closing tag, use `/>` at the end
+- Note: Images are self-closing! There is no `</img>` closing tag
 - `src` defines a link to the image, could be a URL or PATH
 
 
@@ -251,10 +251,33 @@ Used for titles
 
 
 ### Forms
-- Forms are a little more complex
 ```html
-test
+<form>
+    <input type="text" placeholder="Name" name="name">
+    <input type="submit">
+</form>
 ```
+- `<form>` tag
+- `<input>` tag
+   - `type` attribute specifies type of the field that user is to fill in `input` tag
+   - `placeholder` attribute specifies placeholder text in `input` tag
+   - `name` attribute specifies name of field, important for identification
+- `input type="submit"` is a special input type to indicate a submit button for users to submit data in the forms
+
+
+### Input types and attributes
+There are many different input types
+- `input type="password"`
+- `input type="radio"`
+There are also many attributes that can be defined to further customise the input field, e.g.,
+- `maxlength`, maximum number of characters for the `value`
+- `action` url to use for form submission
+[Mozilla Input Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+
+
+### Other attributes
+Other attributes can be defined to further customise the input field
+- 
 
 
 ### CSS
@@ -270,17 +293,15 @@ h1 {
 }
 ```
 - Every element has CSS style attributes
+- `h1` = selector
+- Everything between curly braces = declaration
 
 
 
 ### CSS Box Model
 ![](img/box_model.png)
+Every element represented using box model in CSS
 
-Each element on the page is represented by a rectangular box with 4 main areas.
-1. Content 
-2. Padding
-3. Margin
-4. Position
 
 
 ### CSS Attributes
@@ -446,6 +467,17 @@ Everyone views web pages from their phones now, we need to be able to style for 
 
 
 
+### Meta Tag
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+Meta tags = meta data about the webpage, used by the browser, and also used by search engines.
+In this case, this meta tag is telling the browser about the size of the viewport.
+- `width=device-width` tells the browser to use the screen width of device
+- `initial-scale=1.0` tells the browser about inital zoom level
+
+
+
 ### Flexbox
 - Flexbox = flexible box
 - A way to construct responsive layouts in CSS
@@ -485,7 +517,7 @@ There are also attributes that you can provide for flex items.
 
 ### Media queries
 ```css [1 - 6]
-@media (width: 360px) {
+@media (max-width: 360px) {
     div {
         color: white;
         background: black;
