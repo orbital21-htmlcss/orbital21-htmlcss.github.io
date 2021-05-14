@@ -43,14 +43,7 @@ Slides can be found here
     - Vim/Emacs 
     - Sublime text
     - VS Code
-
-
-
-### INTRODUCTION
-- HTML/CSS are not programming languages
-- JS is a programming language
-- The browser is your REPL
-
+    
 
 
 ### How do they all work together?
@@ -300,6 +293,7 @@ h1 {
 
 ### CSS Box Model
 ![](img/box_model.png)
+
 Every element represented using box model in CSS
 
 
