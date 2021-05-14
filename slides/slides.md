@@ -17,33 +17,19 @@ Slides can be found here
 
 
 
-### Outline
-1. HTML
-    - Basic HTML elements
-    - Forms
-2. CSS
-    - CSS selectors + specificity
-    - Flexbox
-    - Media queries
-3. JavaScript
-    - Manipulating the DOM
-    - Event listeners
-
-
-
 ### What you need
 1. Your browser
 
-<br/>
+<br>
 <img src="img/firefox.svg" width=150px>
 <img src="img/chrome.svg" width=150px>
-<br/>
+<br>
 
 2. Your favourite text editor
     - Vim/Emacs 
     - Sublime text
     - VS Code
-    
+
 
 
 ### How do they all work together?
@@ -183,9 +169,9 @@ Starts with `<!--` and ends with `-->`
 <b>bold</b>
 <i>italics</i>
 <u>underline</u>
-<br/> <!-- Adding whitespace to a page -->
+<br> <!-- Adding whitespace to a page -->
 ```
-- Note: `<br>` is self closing, can use as either `<br>` or `<br/>`
+- `<br>` is self closing, so no need for closing tag
 
 
 ### Headings
@@ -221,7 +207,7 @@ Used for titles
 ```html
 <img src="{LINK_TO_IMAGE}">
 ```
-- Note: Images are self-closing! There is no `</img>` closing tag
+- Images are self-closing! There is no `</img>` closing tag
 - `src` defines a link to the image, could be a URL or PATH
 
 
@@ -245,32 +231,58 @@ Used for titles
 
 ### Forms
 ```html
-<form>
+<form action="...">
     <input type="text" placeholder="Name" name="name">
-    <input type="submit">
+    <input type="submit" value="Submit">
+</form>
+```
+
+
+### Form tag
+```html [1, 4]
+<form action="...">
+    <input type="text" placeholder="Name" name="name">
+    <input type="submit" value="Submit">
 </form>
 ```
 - `<form>` tag
-- `<input>` tag
+- `action=..` specifies URL that processes the form information
+
+
+### Input tag
+```html [2]
+<form action="...">
+    <input type="text" placeholder="Name" name="name">
+    <input type="submit" value="Submit">
+</form>
+```
+- `<input>` tag is self closing
    - `type` attribute specifies type of the field that user is to fill in `input` tag
    - `placeholder` attribute specifies placeholder text in `input` tag
-   - `name` attribute specifies name of field, important for identification
+   - `name` attribute specifies name of field, important for identification, data of field will not be sent if this is not specified
+
+
+### Input type submit
+```html [3]
+<form action="...">
+    <input type="text" placeholder="Name" name="name">
+    <input type="submit" value="Submit">
+</form>
+```
 - `input type="submit"` is a special input type to indicate a submit button for users to submit data in the forms
+- `value` is the text that appears on the button
 
 
 ### Input types and attributes
 There are many different input types
 - `input type="password"`
 - `input type="radio"`
+- `input type="date"`
 There are also many attributes that can be defined to further customise the input field, e.g.,
 - `maxlength`, maximum number of characters for the `value`
 - `action` url to use for form submission
 [Mozilla Input Element Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
 
-
-### Other attributes
-Other attributes can be defined to further customise the input field
-- 
 
 
 ### CSS
@@ -346,7 +358,7 @@ h1 {
 `index.html`
 ```html
 <head>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 ```
 - `rel` describes what this link is for
@@ -536,9 +548,9 @@ You don't have to style everything from scratch!! Learn how to use external libr
 - [Bootstrap](https://getbootstrap.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-<br/>
-<img src="img/bootstrap-4.svg" width=200px/>
-<img src="img/tailwind.svg" width=300px/>
+<br>
+<img src="img/bootstrap-4.svg" width=200px>
+<img src="img/tailwind.svg" width=300px>
 
 
 
@@ -547,9 +559,9 @@ Allows you to generate CSS from the preprocessor's own syntax
 - [Sass](https://sass-lang.com/)
 - [Less](https://lesscss.org/)
 
-<br/>
-<img src="img/sass.svg" width=200px/>
-<img src="img/less.svg" width=300px/>
+<br>
+<img src="img/sass.svg" width=200px>
+<img src="img/less.svg" width=300px>
 
 
 ### Example: Sass
@@ -572,6 +584,8 @@ Sass allows for nesting within CSS, variables + more features
 - Source is a subset of JavaScript!
 - HTML describes what a page looks like, **JS allows us to add logic and behaviours to a webpage**
 - It can manipulate the DOM!
+
+[Learn X in Y minutes Javascript](https://learnxinyminutes.com/docs/javascript/)
 
 
 
@@ -658,19 +672,20 @@ We can actually create a static website with all the info we have learned thus f
 
 
 
-### Event Handlers
+### Event Listeners
 - Every user interaction with the page = EVENT!
 - E.g, mouse events
-  - `onclick`
+  - `onclick` (which we saw just now)
   - `onmousemove`
   - `onmouseenter`
   - `onwheel`
 - Many other events, refer to [Mozilla Event Reference](https://developer.mozilla.org/en-US/docs/Web/Events)
+- Each event should have an **event handler**, which is a callback to be executed when the event occurs
 
 
 
 ### So what now?
-- Learn how to create static sites using a **static site generator**
+- Learn how to create static sites using a **static site generator** (JAM Stack)
 - Learn frameworks e.g., React, Angular, Vue
 - The best way to master what you've learnt is to **build your own project**
 

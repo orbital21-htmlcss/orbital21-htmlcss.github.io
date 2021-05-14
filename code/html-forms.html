@@ -4,9 +4,20 @@
         <title>HTML Forms</title>
     </head>
     <body>
-        <form action="mailto:ranice@nushackers.org" enctype="text/plain">
-            <input type="text">
-            <input type="submit">
+        <form action="">
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+            <br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+            <br>
+            <label for="name">Date:</label>
+            <input type="date" name="date">
+            <input type="submit" value="Submit!">
         </form>
     </body>
 </html>
