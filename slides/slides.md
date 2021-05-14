@@ -267,7 +267,7 @@ test
 
 
 ### CSS
-```css
+```css [1 - 4]
 h1 {
     color: #999;
     font-size: 12px;    
@@ -275,6 +275,16 @@ h1 {
 ```
 - Every element has CSS style attributes
 
+
+
+### CSS Box Model
+![](img/box_model.png)
+
+Each element on the page is represented by a rectangular box with 4 main areas.
+1. Content 
+2. Padding
+3. Margin
+4. Position
 
 
 ### CSS Attributes
@@ -478,6 +488,17 @@ There are also attributes that you can provide for flex items.
 
 
 ### Media queries
+```css [1 - 6]
+@media (width: 360px) {
+    div {
+        color: white;
+        background: black;
+    }
+}
+```
+Another way you can make your web page more responsive, is through media **queries on the width of the viewport.**
+
+[Mozilla Media Query Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 
 
@@ -489,13 +510,14 @@ There are also attributes that you can provide for flex items.
 
 
 ### External Libraries
-You don't have to style everything from scratch!!
+You don't have to style everything from scratch!! Learn how to use external libraries after you have gotten the hang of CSS.
 - [Bootstrap](https://getbootstrap.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
 <br/>
 <img src="img/bootstrap-4.svg" width=200px/>
 <img src="img/tailwind.svg" width=300px/>
+
 
 
 ### CSS Pre-processors
@@ -526,7 +548,7 @@ Sass allows for nesting within CSS, variables + more features
 
 ### JavaScript
 - Source is a subset of JavaScript!
-- HTML describes what a page looks like, **JS allows us to add logic to a webpage**
+- HTML describes what a page looks like, **JS allows us to add logic and behaviours to a webpage**
 - It can manipulate the DOM!
 
 
